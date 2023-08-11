@@ -215,7 +215,7 @@ public class login extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         for (double i = 0.0; i <=1.0; i = i+0.1){
             String val = i+ "";
-            float f = Float.valueOf(val);
+            float f = Float.parseFloat(val);
             this.setOpacity(f);
             try{
                 Thread.sleep(50);
@@ -253,10 +253,8 @@ public class login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new login().setVisible(true);
         });
     }
 
